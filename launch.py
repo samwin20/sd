@@ -253,8 +253,8 @@ def prepare_environment():
     print(f"Python {sys.version}")
     print(f"Commit hash: {commit}")
 
-    if args.reinstall_torch or not is_installed("torch") or not is_installed("torchvision"):
-        run(f'"{python}" -m {torch_command}', "Installing torch and torchvision", "Couldn't install torch", live=True)
+    #if args.reinstall_torch or not is_installed("torch") or not is_installed("torchvision"):
+    #    run(f'"{python}" -m {torch_command}', "Installing torch and torchvision", "Couldn't install torch", live=True)
 
     if not args.skip_torch_cuda_test:
         run_python("import torch; assert torch.cuda.is_available(), 'Torch is not able to use GPU; add --skip-torch-cuda-test to COMMANDLINE_ARGS variable to disable this check'")
@@ -280,8 +280,8 @@ def prepare_environment():
         elif platform.system() == "Linux":
             run_pip(f"install {xformers_package}", "xformers")
 
-    if not is_installed("pyngrok") and args.ngrok:
-        run_pip("install pyngrok", "ngrok")
+    #if not is_installed("pyngrok") and args.ngrok:
+    #    run_pip("install pyngrok", "ngrok")
 
     os.makedirs(os.path.join(script_path, dir_repos), exist_ok=True)
 

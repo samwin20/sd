@@ -1,0 +1,10 @@
+apps:
+  - name: sd_v2_1_base_app
+    script: /home/ubuntu/sd/launch.py
+    interpreter: python
+    args: "--xformers --api --nowebui --port 9837 --disable-safe-unpickle"
+    time: true
+    log_file: "sd_v2_1_base_app.log"
+    restart_delay: 15000
+    merge_logs: false
+    combine_logs: false
