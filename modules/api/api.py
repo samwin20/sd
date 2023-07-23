@@ -359,6 +359,7 @@ class Api:
         args.pop('save_images', None)
 
         with self.queue_lock:
+            print('TEST>>>>', {"sd_model":shared.sd_model}, **args)
             p = StableDiffusionProcessingImg2Img(sd_model=shared.sd_model, **args)
             p.init_images = [decode_base64_to_image(x) for x in init_images]
             p.scripts = script_runner
