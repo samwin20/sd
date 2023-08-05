@@ -4,7 +4,7 @@ apps:
     interpreter: python
     args: "--listen --xformers --no-half-vae --api --port 9838 --disable-safe-unpickle --enable-insecure-extension-access --ckpt /home/ubuntu/stable-diffusion-webui/models/Stable-diffusion/Reliberate.safetensors"
     time: true
-    log_file: "sdxl-1.0_app.log"
+    log_file: "sd_app.log"
     restart_delay: 15000
     merge_logs: false
     combine_logs: false
