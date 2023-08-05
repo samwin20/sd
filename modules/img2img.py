@@ -116,41 +116,6 @@ def img2img(id_task: str, mode: int, prompt: str, negative_prompt: str, prompt_s
 
     assert 0. <= denoising_strength <= 1., 'can only work with strength in [0.0, 1.0]'
 
-    print("debuggind=>",{
-        "sd_model": shared.sd_model,
-        "outpath_samples": opts.outdir_samples or opts.outdir_img2img_samples,
-        "outpath_grids": opts.outdir_grids or opts.outdir_img2img_grids,
-        "prompt": prompt,
-        "negative_prompt": negative_prompt,
-        "styles": prompt_styles,
-        "seed": seed,
-        "subseed": subseed,
-        "subseed_strength": subseed_strength,
-        "seed_resize_from_h": seed_resize_from_h,
-        "seed_resize_from_w": seed_resize_from_w,
-        "seed_enable_extras": seed_enable_extras,
-        "sampler_name": sd_samplers.samplers_for_img2img[sampler_index].name,
-        "batch_size": batch_size,
-        "n_iter": n_iter,
-        "steps": steps,
-        "cfg_scale": cfg_scale,
-        "width": width,
-        "height": height,
-        "restore_faces": restore_faces,
-        "tiling": tiling,
-        "init_images": [image],
-        "mask": mask,
-        "mask_blur": mask_blur,
-        "inpainting_fill": inpainting_fill,
-        "resize_mode": resize_mode,
-        "denoising_strength": denoising_strength,
-        "image_cfg_scale": image_cfg_scale,
-        "inpaint_full_res": inpaint_full_res,
-        "inpaint_full_res_padding": inpaint_full_res_padding,
-        "inpainting_mask_invert": inpainting_mask_invert,
-        "override_settings": override_settings
-        })
-
     p = StableDiffusionProcessingImg2Img(
         sd_model=shared.sd_model,
         outpath_samples=opts.outdir_samples or opts.outdir_img2img_samples,
