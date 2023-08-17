@@ -2,9 +2,10 @@ apps:
   - name: relibrate_app_1
     script: /home/ubuntu/stable-diffusion-webui/launch.py
     interpreter: python
-    args: "--listen --xformers --no-half-vae --reinstall-xformers --api --port 9838 --disable-safe-unpickle --enable-insecure-extension-access --ckpt /home/ubuntu/stable-diffusion-webui/models/Stable-diffusion/Reliberate.safetensors"
+    args: "--listen --opt-sdp-no-mem-attention  --opt-channelslast   --no-half-vae --api --port 9838 --disable-safe-unpickle --enable-insecure-extension-access --ckpt /home/ubuntu/stable-diffusion-webui/models/Stable-diffusion/Reliberate.safetensors"
     time: true
     log_file: "sd_app.log"
     restart_delay: 15000
+    max_memory_restart: "15G"
     merge_logs: false
     combine_logs: false
