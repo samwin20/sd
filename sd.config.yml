@@ -6,6 +6,6 @@ apps:
     time: true
     log_file: "sd_app.log"
     restart_delay: 15000
-    max_memory_restart: "15G"
+    max_memory_restart: "14G"
     merge_logs: false
     combine_logs: false
